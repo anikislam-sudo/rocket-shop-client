@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCsKu45nqAwRLuEVY14eisrKpUcF77Fd8I",
-  authDomain: "rocket-shop-client.firebaseapp.com",
-  projectId: "rocket-shop-client",
-  storageBucket: "rocket-shop-client.appspot.com",
-  messagingSenderId: "811548193157",
-  appId: "1:811548193157:web:8405ba34c8c6d9925dd4ec"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
