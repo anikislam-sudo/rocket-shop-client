@@ -5,7 +5,7 @@ import Service from "../../Pages/Home/Service/Service";
 import ServiceDetails from "../../Pages/Home/Service/ServiceDetails";
 import Services from "../../Pages/Home/Service/Services";
 import Login from "../../Pages/Login/Login";
-import Review from "../../Pages/Review/Review";
+import Reviews from "../../Pages/Reviews/Reviews";
 import SignUp from "../../Pages/SignUp/SignUp";
 
 
@@ -39,7 +39,10 @@ import SignUp from "../../Pages/SignUp/SignUp";
           element:<ServiceDetails></ServiceDetails>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
-       
+        {
+            path: '/reviews',
+            element: <Reviews></Reviews>,
+          }
     ]
 }
 
