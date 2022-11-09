@@ -1,10 +1,13 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
 import login1 from "../../Assets/banner/login.webp"
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login} = useContext(AuthContext);
+    const {login,providerLogin} = useContext(AuthContext);
+    const googleProvider = new GoogleAuthProvider();
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -17,6 +20,17 @@ const Login = () => {
             console.log(user);
         })
         .then(error => console.log(error));
+    }
+    const handleSignInGoogle =()=>{
+        providerLogin(googleProvider)
+  
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
     return (
         <div className="hero w-full">
@@ -48,6 +62,7 @@ const Login = () => {
           
         </div>
         <p className="text-center">New to Rocket shop <Link className='text-purple-600' to="/signup">SignUp</Link></p>
+        <button onClick={handleSignInGoogle}  className='btn btn-active btn-dark mb-2  text-white'  > <FaGoogle className='mr-2 '></FaGoogle>  Login with google</button>
       </form>
     </div>
   </div>
