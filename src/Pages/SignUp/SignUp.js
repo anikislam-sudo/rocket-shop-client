@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import login from "../../Assets/banner/login.webp"
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext);
+   
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+       
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => console.error(err));
        
         
     }

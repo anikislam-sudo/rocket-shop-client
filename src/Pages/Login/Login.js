@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import login from "../../Assets/banner/login.webp"
+import login1 from "../../Assets/banner/login.webp"
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {login} = useContext(AuthContext);
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -21,7 +23,7 @@ const Login = () => {
   <div className="hero-content grid md:grid-cols-2 flex-col lg:flex-row">
     <div>
       
-      <img className='w-3/4' src={login} alt="" srcset="" />
+      <img className='w-3/4' src={login1} alt="" srcset="" />
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100  py-20">
       <form onSubmit={handleLogin} className="card-body">
