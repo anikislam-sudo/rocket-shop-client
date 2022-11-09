@@ -28,7 +28,7 @@ const SignUp = () => {
             
             <img className='w-3/4' src={login} alt="" srcset="" />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100  py-20">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl rounded-lg bg-zinc-300  py-20">
             <form onSubmit={handleSignUp} className="card-body">
             <h1 className="text-5xl text-center font-bold">SignUp</h1>
               <div className="form-control">
@@ -56,7 +56,7 @@ const SignUp = () => {
                   <input type="submit" className="btn btn-primary" value="SignUp" />
                 
               </div>
-              <p className="text-center">Already have an account? <Link className='text-purple-600' to="/login">Login</Link></p>
+              <p className="text-center">Already have an account? <Link className='text-yellow-600' to="/login">Login</Link></p>
             </form>
           </div>
         </div>

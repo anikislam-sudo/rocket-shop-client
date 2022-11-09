@@ -39,7 +39,7 @@ const Login = () => {
       
       <img className='w-3/4' src={login1} alt="" srcset="" />
     </div>
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100  py-20">
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl rounded-lg bg-zinc-300  py-20">
       <form onSubmit={handleLogin} className="card-body">
       <h1 className="text-5xl text-center font-bold">Login</h1>
         <div className="form-control">
@@ -61,8 +61,8 @@ const Login = () => {
             <input type="submit" className="btn btn-primary" value="Login" />
           
         </div>
-        <p className="text-center">New to Rocket shop <Link className='text-purple-600' to="/signup">SignUp</Link></p>
-        <button onClick={handleSignInGoogle}  className='btn btn-active btn-dark mb-2  text-white'  > <FaGoogle className='mr-2 '></FaGoogle>  Login with google</button>
+        <p className="text-center">New  Rocket shop to <Link className='text-yellow-600' to="/signup">SignUp</Link></p>
+        <button onClick={handleSignInGoogle}  className='btn btn-active btn-dark mt-4  text-white'  > <FaGoogle className='mr-2 '></FaGoogle>  Login with google</button>
       </form>
     </div>
   </div>
