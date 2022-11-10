@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../Hooks/useTitle';
 
 const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
     const { _id, serviceName, phone, customer, charge, service, status,message } = review;
     const [orderReview, setOrderReview] = useState([])
+    useTitle("My Review");
     useEffect(() => {
         fetch(`http://localhost:5000/services/${service}`)
             .then(res => res.json())

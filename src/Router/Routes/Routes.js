@@ -31,7 +31,7 @@ import PrivateRouter from "./PrivateRouter";
         },
         {
           path:"/addservice",
-          element:<AddService></AddService>,
+          element:<PrivateRouter><AddService></AddService></PrivateRouter>,
          
         },
         {

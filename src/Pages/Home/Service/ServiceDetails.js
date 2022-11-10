@@ -3,12 +3,13 @@ import { useLoaderData } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 
 const ServiceDetails = () => {
     const { _id,title, img, charge, description } = useLoaderData();
     const {user} = useContext(AuthContext);
    
-
+    useTitle("Service Details");
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;

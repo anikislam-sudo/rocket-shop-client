@@ -4,17 +4,16 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import login1 from "../../Assets/banner/login.webp"
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
     const { login, providerLogin, } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
-
+    
+    useTitle("login");
     const from = location.state?.from?.pathname || '/';
-
-
-
-    const googleProvider = new GoogleAuthProvider();
+   const googleProvider = new GoogleAuthProvider();
 
 
     const handleLogin = event => {
@@ -26,10 +25,29 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                navigate(from, { replace: true });
+                const currentUser ={
+                    email:user.email
+                }
+                console.log(currentUser);
+                //get jwt token
+                fetch("http://localhost:5000/jwt",{
+                    method:"POST",
+                    headers:{
+                        "content-type": "application/json"
+                    },
+                    body:JSON.stringify(currentUser)
+
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data);
+                    localStorage.setItem('rocket-shop', data.token);
+                        navigate(from, { replace: true });
+                })
+                
+               
             })
-            .then(error => console.log(error));
+            .catch(error => console.log(error));
     }
     const handleSignInGoogle = () => {
         providerLogin(googleProvider)
@@ -62,7 +80,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

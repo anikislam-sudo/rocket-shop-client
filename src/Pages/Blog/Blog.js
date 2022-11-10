@@ -1,7 +1,9 @@
 import React from 'react';
 import blog from "../../Assets/blog.jpeg"
+import useTitle from '../../Hooks/useTitle';
 import "./Blog.css"
 const Blog = () => {
+    useTitle("Blog");
     return (
         <div>
             <img className='blog mx-auto m-4' src={blog} alt="" srcset="" />

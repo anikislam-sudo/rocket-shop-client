@@ -1,10 +1,11 @@
+import useTitle from "../../Hooks/useTitle";
 
 
 
 
 const AddService = () => {
    
-   
+    useTitle("Add Service");
   const handleService = event =>{
     event.preventDefault();
     const form = event.target;
