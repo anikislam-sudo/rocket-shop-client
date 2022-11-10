@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext  } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -7,6 +7,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 const ServiceDetails = () => {
     const { _id,title, img, charge, description } = useLoaderData();
     const {user} = useContext(AuthContext);
+   
 
     const handleReview = event => {
         event.preventDefault();
@@ -26,12 +27,7 @@ const ServiceDetails = () => {
             message
         }
 
-        // if(phone.length > 10){
-        //     alert('Phone number should be 10 characters or longer')
-        // }
-        // else{
-
-        // }
+      
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',

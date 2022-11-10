@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import AddService from "../../Pages/AddService/AddService";
+import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import Service from "../../Pages/Home/Service/Service";
 import ServiceDetails from "../../Pages/Home/Service/ServiceDetails";
@@ -28,6 +30,11 @@ import PrivateRouter from "./PrivateRouter";
           element:<PrivateRouter><Services></Services></PrivateRouter>
         },
         {
+          path:"/addservice",
+          element:<AddService></AddService>,
+         
+        },
+        {
           path:"/login",
           element:<Login></Login>
         },
@@ -43,6 +50,10 @@ import PrivateRouter from "./PrivateRouter";
         {
             path: '/reviews',
             element:<PrivateRouter><Reviews></Reviews></PrivateRouter> ,
+          },
+        {
+            path: '/blog',
+            element:<Blog></Blog> ,
           }
     ]
 }

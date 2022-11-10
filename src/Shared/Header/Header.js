@@ -17,6 +17,7 @@ const Header = () => {
         user?.email ?
         <>
         <li className='text-white font-semibold'><Link  to="/reviews">My Reviews</Link></li>
+        <li className='text-white font-semibold'><Link  to="/addservice">Add Service</Link></li>
         <li className='font-semibold'>
                         <button onClick={ handleLogOut } className=' btn-md btn-warning rounded-md text-white'>Sign Out</button>
                     </li>
