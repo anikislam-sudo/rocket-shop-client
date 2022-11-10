@@ -24,6 +24,7 @@ const Header = () => {
         </>
         :
     <li className='text-white font-semibold'><Link  to="/login">Login</Link></li>
+    
        }
     </>
     return (
@@ -44,6 +45,7 @@ const Header = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
      {menuItems}
+     <li className='text-white font-semibold'><Link  to="/blog">Blog</Link></li>
     </ul>
   </div>
   <div className="navbar-end">
